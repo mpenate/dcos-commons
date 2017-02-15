@@ -23,6 +23,11 @@ def setup_module(module):
     install.install(PACKAGE_NAME, DEFAULT_TASK_COUNT)
 
 
+@pytest.smoke
+def test_install():
+    check_running()
+
+
 @pytest.mark.sanity
 def test_no_colocation_in_podtypes():
     # check that no two 'hellos' and no two 'worlds' are colocated on the same agent
